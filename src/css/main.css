@@ -1,0 +1,108 @@
+:root {
+    --color-brand: 246 59 0;
+    --color-alt: 54 52 52;
+    --color-brand-rgb: rgb(246, 59, 0 );
+    --color-alt-rgb: rgb(54, 52, 52);
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        
+     } 
+
+    .common-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .form-input {
+        border: solid 1px #ddd;
+    }
+
+    .img-fluid {
+        max-width: 100%;
+    }
+
+    .section-title {
+        @apply text-3xl;
+        @apply font-extrabold;
+        @apply text-brand;
+    }
+
+    .btn {
+        @apply bg-gray-200;
+        @apply py-2;
+        @apply px-4;
+        @apply inline-flex;
+        @apply items-center;
+        @apply gap-x-1;
+        @apply rounded;
+        @apply border;
+        @apply border-transparent;
+    }
+    .btn-brand {
+        @apply bg-brand;
+        @apply text-white;
+        @apply px-5;
+        @apply md:px-10;
+        @apply py-2;
+        @apply rounded-full;
+
+    }
+    .btn-brand:hover {
+        @apply bg-[#ff0000];
+    }
+    .btn-alt {
+        @apply bg-white;
+        @apply outline-brand;
+        @apply text-black;
+        @apply px-2;
+        @apply md:px-10;
+        @apply py-1;
+        @apply rounded-full;
+       
+    }
+    .btn-alt:hover {
+        @apply bg-white/90; 
+    }
+    .btn-brand-outline {
+        /* @apply bg-white; */
+        @apply border-brand;
+        @apply text-brand;
+    }
+    .btn-brand-outline:hover {
+        @apply shadow-md;
+    }
+    .btn-white {
+        @apply bg-white;
+        @apply text-brand;
+    }
+
+    .btn-white:hover {
+        @apply bg-white/90;
+    }
+   
+
+    .text-link {
+        @apply inline-flex;
+        @apply items-center;
+       
+    }
+
+    .text-link:hover{
+        @apply text-brand;
+    }
+
+    .hero-bg {
+        border-radius: 19px;
+        background: linear-gradient(180deg, #FF3D00 0%, #9F2D09 100%);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+}
