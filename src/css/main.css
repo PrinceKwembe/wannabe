@@ -25,9 +25,6 @@
     }
 
   
-    .form-input {
-        border: solid 1px #ddd;
-    }
 
     .img-fluid {
         max-width: 100%;
@@ -115,8 +112,28 @@
         height: 10rem;
         /* @apply px-10;
         @apply py-5; */
-       
-        
+          
     }
 
+    .form-input {
+        border-radius: 10px;
+        border: 1px solid rgb(64, 64, 64);
+        @apply bg-alt/80;
+        box-shadow:  0px 10px 7.2px 3px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        @apply w-96;
+        @apply w-12;
+        @apply focus:border-brand;      
+        @apply hover:border-brand;      
+    }
+
+    .goal-container {
+        border-radius: 10px;
+        border: 1px solid rgb(64, 64, 64);
+        @apply bg-alt/80;
+        box-shadow:  0px 10px 7.2px 3px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 50rem;
+        height: 30rem;
+        @apply focus:border-brand;      
+        @apply hover:border-brand;      
+    }
 }
