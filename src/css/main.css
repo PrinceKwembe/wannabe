@@ -24,8 +24,6 @@
         padding-bottom: 3rem;
     }
 
-  
-
     .img-fluid {
         max-width: 100%;
     }
@@ -36,17 +34,7 @@
         @apply text-brand;
     }
 
-    .btn {
-        @apply bg-gray-200;
-        @apply py-2;
-        @apply px-4;
-        @apply inline-flex;
-        @apply items-center;
-        @apply gap-x-1;
-        @apply rounded;
-        @apply border;
-        @apply border-transparent;
-    }
+  
     .btn-brand {
         @apply bg-brand;
         @apply text-white;
@@ -57,7 +45,7 @@
 
     }
     .btn-brand:hover {
-        @apply bg-[#ff0000];
+        @apply bg-[#db3602];
     }
     .btn-alt {
         @apply bg-white;
@@ -120,8 +108,10 @@
         border: 1px solid rgb(64, 64, 64);
         @apply bg-alt/80;
         box-shadow:  0px 10px 7.2px 3px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-        @apply w-96;
-        @apply w-12;
+        @apply w-64;
+        @apply h-12;
+        @apply md:w-96;
+        @apply md:h-12;
         @apply focus:border-brand;      
         @apply hover:border-brand;      
     }
@@ -129,10 +119,11 @@
     .goal-container {
         border-radius: 10px;
         border: 1px solid rgb(64, 64, 64);
-        @apply bg-alt/80;
+        @apply bg-alt/20;
         box-shadow:  0px 10px 7.2px 3px rgba(0, 0, 0, 0.25) inset, 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-        width: 50rem;
-        height: 30rem;
+        @apply p-10;
+        @apply h-80;
+        @apply md:h-52;
         @apply focus:border-brand;      
         @apply hover:border-brand;      
     }

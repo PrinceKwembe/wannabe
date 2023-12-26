@@ -25,27 +25,21 @@
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body style="
-  background-image: url(/assets/images/0.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  
-">
+  <body style="background-image: url(/assets/images/bg.svg);">
     <section>
-      <div class="common-section">
-        <div class="container hero-bg">
-          <div class="flex justify-center align-center p-5">
+      <div class="common-section ">
+        <div class="container">
+          <div class=" flex justify-center items-center gap-2">
+            <img src="/assets/images/0.png" alt="" class="img-fluid w-20" />
             <div>
-              <img src="/assets/images/0.png" alt="" width="100px" />
-            </div>
-            <div>
-              <label class="font-bold text-lg" for="">Prince Kwembe</label
-              ><br />
-              <label for="">kwembeprincea@gmail.com</label>
+              <label class="font-bold text-2xl block" for="">Prince Kwembe</label
+              >
+              <label class="text-sm" for="">kwembeprincea@gmail.com</label>
             </div>
           </div>
+          <hr class="mt-10">
         </div>
+       
     </section>
 
     <section>
@@ -53,7 +47,7 @@
       <div class="common-section flex justify-center">
         <form action="" >
           <div class="">
-            <label for="Highest-education" class="font-bold text-lg md:text-2xl text-center block">Highest Education?</label>
+            <label for="Highest-education" class="font-bold text-2xl text-center block">Highest Education?</label>
             <select id="Highest-education" name="Highest_education" class="form-input mt-5 p-3">
                 <option disabled selected>Select</option>
                 <option value="High-school">High-school</option>
@@ -78,12 +72,13 @@
       </div>
 
       <!-- Button -->
-      <div class="mt-10">
-        <button type="submit" class="btn btn-brand flex gap-1 justify-center in-shadow">
-          <p class="text-sm">Update Profile</p>
-          <img src="/assets/images/arrow_right.svg" alt="arrow right" />
-        </button>
-      </div>
+    <div class="mt-10 btn-brand flex gap-2 justify-center items-center in-shadow">
+      <button type="submit" class="flex gap-2 justify-center items-center">
+        <p class="text-md">Update Profile</p>
+        <img src="/assets/images/arrow_right.svg" alt="arrow right" />
+      </button>
+    </div>
+    
 
         </form>
       </div>
