@@ -48,7 +48,7 @@
         <form action="" >
           <div class="">
             <label for="Highest-education" class="font-bold text-2xl text-center block">Highest Education?</label>
-            <select id="Highest-education" name="Highest_education" class="form-input mt-5 p-3">
+            <select id="Highest-education" name="Highest_education" class="form-input mt-5 p-3 " required>
                 <option disabled selected>Select</option>
                 <option value="High-school">High-school</option>
                 <option value="Undergraduate">Undergraduate</option>
@@ -60,7 +60,7 @@
 
         <div class="mt-10">
           <label for="who-are-you" class="font-bold text-2xl text-center block">Who are you?</label>
-          <select id="who-are-you" name="who-are-you" class="form-input mt-5 p-3">
+          <select id="who-are-you" name="who-are-you" class="form-input mt-5 p-3 " required>
               <option disabled selected>Select</option>
               <option value="Student">Student</option>
               <option value="Graduate">Graduate</option>
@@ -72,13 +72,11 @@
       </div>
 
       <!-- Button -->
-    <div class="mt-10 btn-brand flex gap-2 justify-center items-center in-shadow">
-      <button type="submit" class="flex gap-2 justify-center items-center">
-        <p class="text-md">Update Profile</p>
-        <img src="/assets/images/arrow_right.svg" alt="arrow right" />
-      </button>
-    </div>
     
+    <a href="dashboard.html" class="mt-10 btn-brand flex gap-2 justify-center items-center in-shadow "><button type="submit"  class="flex gap-2 justify-center items-center">
+      <p class="text-md">Update Profile</p>
+      <img src="/assets/images/arrow_right.svg" alt="arrow right" />
+    </button></a>
 
         </form>
       </div>

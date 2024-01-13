@@ -57,6 +57,17 @@
         @apply rounded-xl;
        
     }
+
+    .btn-google {
+        @apply bg-white;
+        @apply outline-brand;
+        @apply text-black;
+        @apply px-5;
+        @apply md:px-10;
+        @apply py-1;
+        @apply rounded-full;
+    }
+
     .btn-alt:hover {
         @apply translate-x-1.5;
     }

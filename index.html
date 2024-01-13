@@ -24,7 +24,10 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+    />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -33,11 +36,11 @@
         <div class="common-section">
           <img src="assets/images/WANNABE.com.png" alt="" width="150" />
         </div>
-
-        <div class="btn-brand flex gap-1 justify-center in-shadow">
-          <p class="text-sm">Dashboard</p>
-          <img src="assets/images/arrow_right.svg" alt="arrow right" />
-        </div>
+        <a href="pages/dashboard.html">
+          <div class="btn-brand flex gap-1 justify-center in-shadow">
+            <p class="text-sm">Dashboard</p>
+            <img src="assets/images/arrow_right.svg" alt="arrow right" /></div
+        ></a>
       </section>
     </section>
 
@@ -62,7 +65,7 @@
 
               <!-- hero-button -->
               <div class="flex justify-center md:justify-start mt-2">
-                <button class="btn-alt flex gap-2 justify-center items-center">
+                <button class="btn-google flex gap-2 justify-center items-center">
                   <img
                     src="assets/images/google.png"
                     alt=""
@@ -456,7 +459,7 @@
     <section data-aos="fade-up" class="mt-10 mb-10">
       <div class="container flex justify-center">
         <div class="flex justify-center md:justify-start mb-10">
-          <button class="btn-alt flex gap-2 justify-center items-center">
+          <button class="btn-google flex gap-2 justify-center items-center">
             <img
               src="assets/images/google.png"
               alt=""
@@ -474,13 +477,10 @@
       <p class="text-white/20 text-center">Kwemzi Concept © 2024</p>
     </footer>
 
- 
-
-     <!-- AOS Library JS -->
-      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init();
-   
-  </script>
+      AOS.init();
+    </script>
   </body>
 </html>
