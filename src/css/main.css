@@ -19,6 +19,14 @@
         
      } 
 
+     .navbar {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(16px);
+        background-color: rgba(53, 53, 53, 0.08);
+        @apply border-b;
+        @apply border-[#f4f4f40f];
+     }
+
     .common-section {
         padding-top: 3rem;
         padding-bottom: 3rem;

@@ -455,6 +455,14 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.navbar {
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(16px);
+  background-color: rgba(53, 53, 53, 0.08);
+  border-bottom-width: 1px;
+  border-color: #f4f4f40f;
+}
+
 .common-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -823,12 +831,20 @@ body {
   inset-inline-end: 0.25rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .isolate {
   isolation: isolate;
 }
 
 .isolation-auto {
   isolation: auto;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .float-right {
@@ -898,6 +914,10 @@ body {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-5 {
@@ -2176,9 +2196,19 @@ body {
   padding-right: 1.25rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pt-5 {
@@ -2811,8 +2841,16 @@ body {
     margin-bottom: 0px;
   }
 
+  .md\:mr-96 {
+    margin-right: 24rem;
+  }
+
   .md\:mt-2 {
     margin-top: 0.5rem;
+  }
+
+  .md\:mt-32 {
+    margin-top: 8rem;
   }
 
   .md\:grid-cols-2 {
@@ -2821,6 +2859,10 @@ body {
 
   .md\:justify-start {
     justify-content: flex-start;
+  }
+
+  .md\:gap-96 {
+    gap: 24rem;
   }
 
   .md\:text-left {
