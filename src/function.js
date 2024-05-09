@@ -38,7 +38,7 @@ export async function checkConnection() {
       const { data, error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-              redirectTo: "http://localhost:8081/pages/career.html"
+              redirectTo: "http://localhost:8081/pages/onboarding.html"
           }
       })
       if (error) {
@@ -78,8 +78,3 @@ export async function logOut() {
     return user
  }
 getCurrentUser()
-export async function addCareer(userId) {
-    console.log(userId)
-}
- 
-export async function addActivity(user_id,activity1,activity2,activity3) { }
