@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/0.png" />
+    <title>Wannabe | AI-driven Career guidance system</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+    />
+  </head>
+  <body
+    style="
+      background-image: url(../assets/images/bg1.jpg);
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    "
+  >
+    <section class="navbar">
+      <section class="container flex justify-between items-center">
+        <div class="">
+          <img src="../assets/images/WANNABE.com.png" alt="" width="150" />
+        </div>
+
+        <div class="btn-alt scale-50 flex justify-center items-center gap-2">
+          <img src="../assets/images/0.png" alt="" class="img-fluid w-20" />
+          <div>
+            <label class="font-bold text-lg block" for="">Prince Kwembe</label>
+            <label class="text-sm" for="">kwembeprincea@gmail.com</label>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <div class="max-w-md mx-auto bg-hero p-6 rounded-md shadow-md ">
+      <div class="text-center mb-10">
+        <p class="text-3xl md:text-5xl font-black text-balance">
+          What are your <span class="text-brand">Technical Skills?</span>
+        </p>
+        <p class="text-sm md:text-lg text-gray-400 mt-1 md:mt-2">
+          Pick three technical skills that you possess
+        </p>
+      </div>
+  
+      <!-- Search Form -->
+      <form id="technicalSkillsForm">
+        <label for="searchInput" class="block text-gray-400 mb-2 text-center">Search Technical Skills:</label>
+        <input type="text" id="searchInput" class="form-input w-full border p-2 mb-4" placeholder="Type to search...">
+  
+        <!-- Display Technical Skills -->
+        <div id="technicalSkillsList" class="mb-4"></div>
+  
+        <!-- Selected Technical Skills -->
+        <div id="selectedSkills" class="mb-4"></div>
+  
+        <!-- Submit Button -->
+        <button type="submit" id="submitButton" class="in-shadow btn-brand w-full" disabled >Submit</button>
+      </form>
+    </div>
+  
+    <!-- JavaScript Logic -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Predefined array of technical skills
+        const technicalSkills = [
+          "Clinical Skills (patient examination, diagnosis, treatment)", "Medical Imaging Interpretation", "Surgical Skills",
+          "Electronic Health Record (EHR) Systems", "Legal Research and Writing", "Contract Law",
+          "Litigation Skills", "Legal Case Management Software", "AutoCAD and other Design Software",
+          "Technical Drawing and Drafting", "Project Management", "Programming (for certain engineering fields)",
+          "Programming Languages (e.g., Python, Java, C++)", "Web Development", "Database Management",
+          "Cybersecurity Skills", "Networking Skills", "Project Management", "Computer Repairs",
+          "Financial Analysis", "Data Analytics", "Business Process Optimization", "Customer Relationship Management (CRM) Software",
+          "Financial Reporting", "Auditing", "Taxation", "Financial Modeling",
+          "Accounting Software (e.g., QuickBooks)", "Patient Care Planning", "Electronic Health Record (EHR) Systems",
+          "Medication Administration", "Nursing Informatics", "Critical Care Skills", "Crop Management",
+          "Livestock Management", "Precision Agriculture Technologies", "Agricultural Economics",
+          "Sustainable Agriculture Practices", "Journalism Writing and Editing", "Digital Media Production",
+          "Social Media Management", "Broadcasting and Reporting", "Video Editing",
+          "Geographic Information Systems (GIS)", "Environmental Impact Assessment", "Remote Sensing",
+          "Environmental Modeling", "Conservation Biology", "Curriculum Development", "Classroom Management",
+          "Educational Technology Integration", "Assessment and Evaluation", "Special Education Techniques",
+          "Medication Dispensing", "Pharmaceutical Compounding", "Pharmacology", "Drug Interaction Analysis",
+          "Pharmacy Management Software"
+        ];
+  
+        const form = document.getElementById('technicalSkillsForm');
+        const searchInput = document.getElementById('searchInput');
+        const technicalSkillsList = document.getElementById('technicalSkillsList');
+        const selectedSkills = document.getElementById('selectedSkills');
+        const submitButton = document.getElementById('submitButton');
+  
+        // Event listener for form submission
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          alert('Selected Technical Skills: ' + getSelectedSkills().join(', '));
+        });
+  
+        // Event listener for input changes
+        searchInput.addEventListener('input', updateTechnicalSkillsList);
+  
+        // Function to update the displayed technical skills based on the search input
+        function updateTechnicalSkillsList() {
+          const query = searchInput.value.toLowerCase();
+          const filteredSkills = technicalSkills.filter(skill => skill.toLowerCase().includes(query));
+  
+          // Clear previous results
+          technicalSkillsList.innerHTML = '';
+  
+          // Display filtered technical skills
+          filteredSkills.forEach(skill => {
+            const skillItem = document.createElement('div');
+            skillItem.classList.add('form-input','bg-alt/30', 'text-center', 'cursor-pointer', 'flex', 'items-center', 'justify-center', 'mb-2', 'w-full','text-gray-400');
+            skillItem.textContent = skill;
+  
+            // Event listener for skill selection
+            skillItem.addEventListener('click', function () {
+              selectSkill(skill);
+              updateSelectedSkills();
+            });
+  
+            technicalSkillsList.appendChild(skillItem);
+          });
+        }
+  
+        // Function to select a technical skill
+        function selectSkill(skill) {
+          if (!selectedSkillsArray.includes(skill) && selectedSkillsArray.length < 3) {
+            selectedSkillsArray.push(skill);
+          }
+        }
+  
+        // Function to update the displayed selected skills
+        function updateSelectedSkills() {
+          selectedSkills.innerHTML = '';
+          selectedSkillsArray.forEach(skill => {
+            const selectedSkillItem = document.createElement('span');
+            selectedSkillItem.classList.add('btn-brand','p-2', 'rounded-md', 'mr-2','mb-5');
+            selectedSkillItem.textContent = skill;
+  
+            // Event listener for removing selected skill
+            selectedSkillItem.addEventListener('click', function () {
+              deselectSkill(skill);
+              updateSelectedSkills();
+            });
+  
+            selectedSkills.appendChild(selectedSkillItem);
+          });
+  
+          // Enable or disable submit button based on the number of selected skills
+          submitButton.disabled = selectedSkillsArray.length !== 3;
+        }
+  
+        // Function to deselect a technical skill
+        function deselectSkill(skill) {
+          const index = selectedSkillsArray.indexOf(skill);
+          if (index !== -1) {
+            selectedSkillsArray.splice(index, 1);
+          }
+        }
+  
+        // Function to get the currently selected skills
+        function getSelectedSkills() {
+          return selectedSkillsArray.slice(); // Return a copy to avoid external modification
+        }
+  
+        // Initialize selected skills array
+        const selectedSkillsArray = [];
+      });
+    </script>
+  </body>
+</html>
