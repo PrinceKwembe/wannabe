@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/0.png" />
+    <title>Wannabe | AI-driven Career guidance system</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+    />
+  </head>
+  <body
+    style="
+      background-image: url(../assets/images/bg1.jpg);
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    "
+  >
+  <!-- NAVBAR -->
+    <section class="navbar">
+      <section class="container flex justify-between items-center">
+        <div class="">
+          <img src="../assets/images/WANNABE.com.png" alt="" width="150" />
+        </div>
+
+        <div class="btn-alt scale-50 flex justify-center items-center gap-2">
+          <img src="../assets/images/0.png" alt="" class="img-fluid w-20" />
+          <div>
+            <label class="font-bold text-lg block" for="">Prince Kwembe</label>
+            <label class="text-sm" for="">kwembeprincea@gmail.com</label>
+          </div>
+        </div>
+      </section>
+    </section>
+
+
+    <section>
+      <div class="container">
+        <div class="common-section grid justify-center items-center">
+          <div class="text-center">
+            <p class="text-3xl md:text-5xl font-black text-balance">
+              What are your<span class="text-brand">Career</span> Choices?
+            </p>
+            <p class="text-sm md:text-lg text-gray-400 mt-1 md:mt-2">
+              Pick your first, second and third Career Choice
+            </p>
+          </div>
+          <div class="mt-10 grid justify-center">
+            <form action="">
+
+              <!-- CAREER 1 -->
+              <label
+                for="Career1"
+                class="text-xl text-center block"
+                >First Career Choice</label
+              >
+              <select
+                id="Career1"
+                name="Career1"
+                class="form-input my-5 p-3"
+                required
+              >
+                <option disabled selected>Select</option>
+                <option value="option_one">Medicine and Surgery</option>
+                <option value="option_two"
+                  >Law</option
+                >
+                <option value="option_three">Engineering (Civil, Mechanical, Electrical, etc.)</option>
+                <option value="option_four"
+                  >Computer Science/Information Technology</option
+                >
+                <option value="option_five">Business Administration/Management</option>
+                <option value="option_six">Accounting/Finance</option>
+                <option value="option_seven">Nursing and Nursing Science</option>
+                <option value="option_eight">Agriculture</option>
+                <option value="option_nine">Mass Communication/Journalism</option>
+                <option value="option_ten">Environmental Science</option>
+                <option value="option_eleven">Education</option>
+                <option value="option_twelve">Pharmacy</option>
+              </select>
+
+              <!-- CAREER 2 -->
+              <label
+                for="Career2"
+                class="text-xl text-center block"
+                >Second Career Choice</label
+              >
+              <select
+                id="Career2"
+                name="Career2"
+                class="form-input my-5 p-3"
+                required
+              >
+                <option disabled selected>Select</option>
+                <option value="option_one">Medicine and Surgery</option>
+                <option value="option_two"
+                  >Law</option
+                >
+                <option value="option_three">Engineering (Civil, Mechanical, Electrical, etc.)</option>
+                <option value="option_four"
+                  >Computer Science/Information Technology</option
+                >
+                <option value="option_five">Business Administration/Management</option>
+                <option value="option_six">Accounting/Finance</option>
+                <option value="option_seven">Nursing and Nursing Science</option>
+                <option value="option_eight">Agriculture</option>
+                <option value="option_nine">Mass Communication/Journalism</option>
+                <option value="option_ten">Environmental Science</option>
+                <option value="option_eleven">Education</option>
+                <option value="option_twelve">Pharmacy</option>
+              </select>
+
+               <!-- CAREER 3 -->
+               <label
+               for="Career3"
+               class="text-xl text-center block"
+               >Second Career Choice</label
+             >
+             <select
+               id="Career3"
+               name="Career3"
+               class="form-input my-5 p-3"
+               required
+             >
+               <option disabled selected>Select</option>
+               <option value="option_one">Medicine and Surgery</option>
+               <option value="option_two"
+                 >Law</option
+               >
+               <option value="option_three">Engineering (Civil, Mechanical, Electrical, etc.)</option>
+               <option value="option_four"
+                 >Computer Science/Information Technology</option
+               >
+               <option value="option_five">Business Administration/Management</option>
+               <option value="option_six">Accounting/Finance</option>
+               <option value="option_seven">Nursing and Nursing Science</option>
+               <option value="option_eight">Agriculture</option>
+               <option value="option_nine">Mass Communication/Journalism</option>
+               <option value="option_ten">Environmental Science</option>
+               <option value="option_eleven">Education</option>
+               <option value="option_twelve">Pharmacy</option>
+             </select>
+
+              <!-- Button -->
+              <div 
+                class="mt-5 btn-brand flex gap-2 justify-center items-center in-shadow"
+              >
+                <button
+                  type="submit"
+                  class="flex gap-2 justify-center items-center addCareer"
+                  name="addCareer"
+
+                >
+                  <p class="text-md">Next</p>
+                  <img src="../assets/images/arrow_right.svg" alt="arrow right" />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <button id="sigIn"></button>
+    <button id="logOut" class="logOut"></button>
+    <button id="who_are_you" class="who_are_you"></button>
+    <button id="Highest_education" class="Highest_education"></button>
+    <button id="update" class="update"></button>
+    <button id="activityForm" class="activityForm"></button>
+    <button id="activityNext" class="activityNext"></button>
+    <!-- <script type="module" src="../bundle.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- <script src="https://unpkg.com/@supabase/supabase-js@2"></script> -->
+
+    <script>
+
+       function getToken() {
+          const hash = window.location.hash;
+          // Remove the leading '#'character
+          const hashFragment = hash.slice(1);
+          const params = new URLSearchParams(hashFragment);
+          const accessToken = params.get('access_token');
+          const refresh_token = params.get('refresh_token');
+          // Store tokens in local storage for global access
+         localStorage.setItem('accessToken', accessToken);
+         localStorage.setItem('refreshToken', refresh_token);
+          return { accessToken, refresh_token };
+        }
+        getToken()
+        const accessToken = localStorage.getItem('accessToken');
+        const refreshToken = localStorage.getItem('refreshToken');
+        const data = localStorage.getItem('Data');
+          // Use the tokens as needed in your code
+          console.log('Access Token:', accessToken);
+          console.log('Refresh Token:', refreshToken);
+          console.log('Data:',data)
+          </script>
+  </body>
+  </html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/0.png" />
+    <title>Onboarding</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body style="background-image: url(../assets/images/bg.jpg);">
+    <section>
+      <div class="common-section ">
+        <div class="container">
+          <div class=" flex justify-center items-center gap-2">
+            <img src="../assets/images/0.png" alt="" class="img-fluid w-20" />
+            <div>
+              <label class="font-bold text-2xl block" for="">Prince Kwembe</label
+              >
+              <label class="text-sm" for="">kwembeprincea@gmail.com</label>
+            </div>
+          </div>
+          <hr class="mt-10">
+        </div>
+       
+    </section>
+
+    <section>
+     <div class="container">
+      <div class="common-section flex justify-center">
+        <form action="" class="onbording">
+          <div class="">
+            <label for="Highest-education" class="font-bold text-2xl text-center block">Highest Education?</label>
+            <select id="Highest-education" name="Highest_education" class="form-input mt-5 p-3 Highest_education" required>
+                <option disabled value="" selected>Select</option>
+                <option value="High-school">High-school</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Postgraduate">Postgraduate</option>
+            </select>
+        </div>
+
+        <div class="mt-10">
+          <label for="who-are-you" class="font-bold text-2xl text-center block">Who are you?</label>
+          <select id="who-are-you" name="who_are_you" class="form-input mt-5 p-3 who_are_you" id="who_are_you" required>
+              <option disabled value="" selected>Select</option>
+              <option value="Student">Student</option>
+              <option value="Graduate">Graduate</option>
+              <option value="Working-professional">Working professional</option>
+              <option value="Career-counselo">Career counselor</option>
+              <option value="Parent">Parent</option>
+              <option value="School">School</option>
+          </select>
+      </div>
+
+      <!-- Button -->
+    
+    <div class="mt-10 btn-brand flex gap-2 justify-center items-center in-shadow update">
+      <button type="submit"  class="flex gap-2 justify-center items-center next">
+      <p class="text-md">Update Profile</p>
+      <img src="../assets/images/arrow_right.svg" alt="arrow right" />
+    </button>
+  </a>
+  
+  </div>
+        </form>
+      </div>
+     </div>
+    </section>
+    <button id="sigIn"></button>
+      <button  id="logOut" class="logOut"></button>
+      <button id="who_are_you" class="who_are_you"></button>
+      <button  id="Highest_education" class="Highest_education"></button>
+      <button  id="update" class="update"></button>
+      <button  id="activityForm" class="activityForm"></button>
+      <button  id="activityNext" class="activityNext"></button>
+    <script src="../bundle.js"></script>
+    <script>
+      
+      function getEducation(Highest_education=''){
+        return Highest_education
+      }
+      function getwhoYouAre(whoYouAre=''){
+        return whoYouAre
+      }
+      window.onload = () => {
+            const Highest_education = document.querySelector('.Highest_education');
+            if (Highest_education) {
+                Highest_education.addEventListener('change', (e) => {
+                    getEducation(Highest_education.value);
+                });
+            } else {
+                console.error("Element with class 'Highest_education' not found.");
+            }
+            const who_you_are = document.querySelector('.who_are_you');
+            if (who_you_are) {
+                who_you_are.addEventListener('change', (e) => {
+                    getwhoYouAre(who_you_are.value);
+                });
+            } else {
+                console.error("Element with class 'who_are_you' not found.");
+            }
+            const next = document.querySelector('.update');
+            if (next) {
+                next.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (Highest_education.value !=='' && who_you_are.value !=='') {
+                      console.log(Highest_education.value+' '+ who_you_are.value)
+                    }
+                    else {
+                      console.log("please Select" );
+                
+                    }
+                    
+                });
+            } else {
+                console.error("Element with class 'update' not found.");
+            }
+          }
+       
+    </script>
+  </body>
+</html>
