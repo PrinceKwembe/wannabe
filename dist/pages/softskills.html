@@ -74,7 +74,7 @@
         <div id="selectedSkills" class="mb-4"></div>
   
         <!-- Submit Button -->
-        <button type="submit" id="submitButton" class="in-shadow btn-brand w-full " >Submit</button>
+        <button type="submit" id="submitButton" class="in-shadow btn-brand w-full ">Submit</button>
       </form>
     </div>
   
@@ -114,7 +114,7 @@
         // Function to update the displayed soft skills based on the search input
         function updateSoftSkillsList() {
           const query = searchInput.value.toLowerCase();
-          const filteredSkills = softSkills.filter(skill => skill.toLowerCase().includes(query));
+          const filteredSkills = softSkills.filter(skill => skill[0].toLowerCase().includes(query));
   
           // Clear previous results
           softSkillsList.innerHTML = '';

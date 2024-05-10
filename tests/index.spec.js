@@ -26,38 +26,38 @@ test('Onboarding Page', async ({ page }) => {
 
 
 test('Career Page', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/dist/pages/career.html');
+  await page.goto('http://192.168.102.13:8081/dist/pages/career.html');
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle("Wannabe | AI-driven Career guidance system");
-  await expect(page).toHaveURL("http://127.0.0.1:5500/dist/pages/career.html")
+  await expect(page).toHaveURL("http://192.168.102.13:8081/dist/pages/career.html")
 
 });
 
 test('Recommendation Page', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/dist/pages/recommendation.html');
+  await page.goto('http://192.168.102.13:8081/dist/pages/recommendation.html');
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle("Wannabe | AI-driven Career guidance system");
-  await expect(page).toHaveURL("http://127.0.0.1:5500/dist/pages/recommendation.html")
+  await expect(page).toHaveURL("http://192.168.102.13:8081/dist/pages/recommendation.html")
 
 });
 
 test('Activity Page', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/dist/pages/activities.html');
+  await page.goto('http://192.168.102.13:8081/dist/pages/activities.html');
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle("Wannabe | AI-driven Career guidance system");
-  await expect(page).toHaveURL("http://127.0.0.1:5500/dist/pages/activities.html")
+  await expect(page).toHaveURL("http://192.168.102.13:8081/dist/pages/activities.html")
 
 });
 
 test('Softs Skills Page', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5500/dist/pages/softskills.html');
+  await page.goto('http://192.168.102.13:8081/dist/pages/softskills.html');
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle("Wannabe | AI-driven Career guidance system");
-  await expect(page).toHaveURL("http://127.0.0.1:5500/dist/pages/softskills.html")
+  await expect(page).toHaveURL("http://192.168.102.13:8081/dist/pages/softskills.html")
 
 });
 

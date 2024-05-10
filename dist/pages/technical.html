@@ -121,7 +121,7 @@
         // Function to update the displayed technical skills based on the search input
         function updateTechnicalSkillsList() {
           const query = searchInput.value.toLowerCase();
-          const filteredSkills = technicalSkills.filter(skill => skill.toLowerCase().includes(query));
+          const filteredSkills = technicalSkills.filter(skill => skill[0].toLowerCase().includes(query));
   
           // Clear previous results
           technicalSkillsList.innerHTML = '';

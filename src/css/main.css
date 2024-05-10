@@ -25,6 +25,8 @@
         background-color: rgba(53, 53, 53, 0.08);
         @apply border-b;
         @apply border-[#f4f4f40f];
+        @apply hover:bg-white;
+        
      }
 
     .common-section {
@@ -63,6 +65,7 @@
         @apply md:px-10;
         @apply py-2;
         @apply rounded-xl;
+        
        
     }
 
