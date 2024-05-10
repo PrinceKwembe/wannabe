@@ -38,14 +38,12 @@ export async function checkConnection() {
       const { data, error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: {
-              redirectTo: "http://localhost:8081/pages/career.html"
+              redirectTo: "http://localhost:8081/pages/onboarding.html"
           }
       })
       if (error) {
-        return error
+        console.error(error);
       }
-      
-    getCurrentUser()
 
       return data
       
@@ -71,13 +69,6 @@ export async function logOut() {
   const refresh_token = params.get('refresh_token');
   return { accessToken, refresh_token };
 }
- export async function getCurrentUser(){
-    // get the current user
-     const { data: { user } } = await supabase.auth.getUser()
-     localStorage.setItem('Data', user);
-    return user
- }
-getCurrentUser()
 export async function addCareer(userId) {
     console.log(userId)
 }

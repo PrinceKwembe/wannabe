@@ -29,11 +29,11 @@
       <div class="common-section ">
         <div class="container">
           <div class=" flex justify-center items-center gap-2">
-            <img src="../assets/images/0.png" alt="" class="img-fluid w-20" />
+            <img src="../assets/images/0.png" alt="" class="img-fluid w-20 avatar_url" />
             <div>
-              <label class="font-bold text-2xl block" for="">Prince Kwembe</label
+              <label class="font-bold text-2xl block full_name">Prince Kwembe</label
               >
-              <label class="text-sm" for="">kwembeprincea@gmail.com</label>
+              <label class="text-sm email" >kwembeprincea@gmail.com</label>
             </div>
           </div>
           <hr class="mt-10">
@@ -84,57 +84,160 @@
       </div>
      </div>
     </section>
-    <button id="sigIn"></button>
-      <button  id="logOut" class="logOut"></button>
-      <button id="who_are_you" class="who_are_you"></button>
-      <button  id="Highest_education" class="Highest_education"></button>
-      <button  id="update" class="update"></button>
-      <button  id="activityForm" class="activityForm"></button>
-      <button  id="activityNext" class="activityNext"></button>
-    <script src="../bundle.js"></script>
     <script>
       
-      function getEducation(Highest_education=''){
-        return Highest_education
-      }
-      function getwhoYouAre(whoYouAre=''){
-        return whoYouAre
-      }
-      window.onload = () => {
-            const Highest_education = document.querySelector('.Highest_education');
-            if (Highest_education) {
-                Highest_education.addEventListener('change', (e) => {
-                    getEducation(Highest_education.value);
-                });
-            } else {
-                console.error("Element with class 'Highest_education' not found.");
-            }
-            const who_you_are = document.querySelector('.who_are_you');
-            if (who_you_are) {
-                who_you_are.addEventListener('change', (e) => {
-                    getwhoYouAre(who_you_are.value);
-                });
-            } else {
-                console.error("Element with class 'who_are_you' not found.");
-            }
-            const next = document.querySelector('.update');
-            if (next) {
-                next.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (Highest_education.value !=='' && who_you_are.value !=='') {
-                      console.log(Highest_education.value+' '+ who_you_are.value)
-                    }
-                    else {
-                      console.log("please Select" );
-                
-                    }
-                    
-                });
-            } else {
-                console.error("Element with class 'update' not found.");
-            }
+      function getToken() {
+          const hash = window.location.hash;
+          // Remove the leading '#'character
+          const hashFragment = hash.slice(1);
+          const params = new URLSearchParams(hashFragment);
+          const accessToken = params.get('access_token');
+          const refreshToken = params.get('refresh_token'); // Fixed typo here
+          // Store tokens in local storage for global access
+          localStorage.setItem('accessToken', accessToken);
+          localStorage.setItem('refreshToken', refreshToken);
+          return { accessToken, refreshToken }; // Fixed typo here
+        }
+
+        const tokens = getToken(); // Call getToken() to get and store tokens
+        const accessToken = tokens.accessToken; // Get access token from stored tokens
+        const refreshToken = tokens.refreshToken; // Get refresh token from stored tokens
+
+
+        async function getUserDetails(accessToken) {
+          try {
+
+            const response = await fetch('http://localhost:8003/get_user_details', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                accessToken: accessToken
+              })
+            });
+            const data = await response.json();
+            const userData = data.data;
+
+            // Store the user details in local storage
+            localStorage.setItem('userId', JSON.stringify(userData.id));
+            localStorage.setItem('full_name', JSON.stringify(userData.full_name));
+            localStorage.setItem('email', JSON.stringify(userData.email));
+            localStorage.setItem('avatar_url', JSON.stringify(userData.avatar_url));
           }
+          catch (e) {
+            console.error(e)
+            console.log(e)
+          }
+            
+          }
+          async function addUserProfile(userId,name,email,photo) {
+              try {
+
+                const response = await fetch('http://localhost:8003/addProfile', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    user_id: userId,
+                    name: name,
+                    email: email,
+                    photo_url: photo
+                  })
+                });
+                const data = await response.json();
+                const userData = data.data;
+                console.log(userData);
+              }
+              catch (e) {
+                console.error(e)
+                console.log(e)
+              }
+
+            }
+           async function addEducation(userId,Highest_education, who_you_are) {
+            try{
+              
+              const response = await fetch('http://localhost:8003/update_EducationLevel', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  userId: userId,
+                  highestEducationLevel: Highest_education,
+                  who_are_you: who_you_are
+                })
+              });
+              if (response.ok) {
+                const data = await response.json();
+                const userData = data.data;
+                
+                const highestEducationLevel = localStorage.setItem('highestEducationLevel', JSON.stringify(userData.highestEducationLevel));
+                const who_are_you= localStorage.setItem('who_are_you', JSON.stringify(userData.who_are_you));
+                console.log("Highest Education",highestEducationLevel)
+                console.log(who_are_you)
+                
+              }
+              else{
+                console.log("error")
+              }
+            }
+            catch(e){
+              console.error(e)
+
+            }
+            }
+        if (!accessToken) {
+          window.location.href = "http://localhost:8081/";
+        } else {
+          getUserDetails(accessToken);
+          // Use the tokens as needed in your code
+          const userId = localStorage.getItem('userId');
+          const email = localStorage.getItem('email');
+          const full_name = localStorage.getItem('full_name');
+          const avatarUrl = localStorage.getItem('avatar_url');
+          const imgElement = document.querySelector('img.avatar_url');
+          addUserProfile(userId.replace(/^"|"$/g, ''),full_name.replace(/^"|"$/g, ''),email.replace(/^"|"$/g, ''), avatarUrl.replace(/^"|"$/g, ''))
+          // imgElement.src = avatarUrl;
+          const html_full_name = document.querySelector('.full_name');
+          const html_email = document.querySelector('.email');
+          // Check if the element was found
+          if (html_full_name !== 'null' && html_email !== 'null') {
+            // If found, set the innerHTML of the element to full_name
+            html_full_name.innerHTML = full_name.replace(/^"|"$/g, '');
+            html_email.innerHTML = email.replace(/^"|"$/g, '');
+          } else {
+            // If not found, log an error or handle the case gracefully
+            console.error('Element with the specified selector not found.');
+          }
+          console.log("Full Name: ",full_name);
+          console.log("Email: ",email);
+          console.log("UserId: ",userId);
+          console.log("AvatarUrl: ",avatarUrl);
+          console.log('Access Token:', accessToken);
+          console.log('Refresh Token:', refreshToken);
+
+          const Highest_education = document.querySelector('.Highest_education');
+          const who_you_are = document.querySelector('.who_are_you');
+          const next = document.querySelector('.update');
+          next.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (Highest_education.value !== '' && who_you_are.value !== '') {
+              addEducation(userId.replace(/^"|"$/g, ''),Highest_education.value, who_you_are.value)
+              
+
+            } else {
+              alert('Please Select')
+            }
+
+          });
+
+        }
+        
        
     </script>
+    <!-- <script src="../bundle.js"></script> -->
   </body>
 </html>

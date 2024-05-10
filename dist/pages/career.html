@@ -193,27 +193,17 @@
     <!-- <script src="https://unpkg.com/@supabase/supabase-js@2"></script> -->
 
     <script>
-
-       function getToken() {
-          const hash = window.location.hash;
-          // Remove the leading '#'character
-          const hashFragment = hash.slice(1);
-          const params = new URLSearchParams(hashFragment);
-          const accessToken = params.get('access_token');
-          const refresh_token = params.get('refresh_token');
-          // Store tokens in local storage for global access
-         localStorage.setItem('accessToken', accessToken);
-         localStorage.setItem('refreshToken', refresh_token);
-          return { accessToken, refresh_token };
-        }
-        getToken()
+        
         const accessToken = localStorage.getItem('accessToken');
         const refreshToken = localStorage.getItem('refreshToken');
-        const data = localStorage.getItem('Data');
-          // Use the tokens as needed in your code
-          console.log('Access Token:', accessToken);
-          console.log('Refresh Token:', refreshToken);
-          console.log('Data:',data)
+        if (accessToken === 'null') {
+            window.location.href = "http://localhost:8081/";
+          } else {
+            // Use the tokens as needed in your code
+            console.log('Access Token:', accessToken);
+            console.log('Refresh Token:', refreshToken);
+          }
+          
           </script>
   </body>
   </html>
